@@ -4,7 +4,7 @@
 \alias{lol}
 \title{huhu}
 \usage{
-lol()
+lol(a, b)
 }
 \description{
 huhu

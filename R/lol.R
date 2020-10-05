@@ -1,7 +1,7 @@
 #' huhu
 #' @export
-lol <- function() {
+lol <- function(a, b) {
 
-  rcpp_hello_world()
+  futhark_entry_main_cpp(a, b)
 
 }
