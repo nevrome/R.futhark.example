@@ -15,9 +15,12 @@ extern "C" {
 //' Call C function from Rcpp
 //' @export
 // [[Rcpp::export]]
-int32_t futhark_entry_main_cpp(int32_t a, int32_t b) {
+SEXP futhark_entry_main_cpp(SEXP a, SEXP b) {
 
-  int32_t ab = futhark_entry_main_c(a, b);
+  int32_t a_mod = Rcpp::as<int32_t>(a);
+  int32_t b_mod = Rcpp::as<int32_t>(b);
 
-  return ab;
+  int32_t ab = futhark_entry_main_c(a_mod, b_mod);
+
+  return Rcpp::wrap(ab);
 }

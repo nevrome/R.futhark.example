@@ -6,13 +6,13 @@
 using namespace Rcpp;
 
 // futhark_entry_main_cpp
-int32_t futhark_entry_main_cpp(int32_t a, int32_t b);
+SEXP futhark_entry_main_cpp(SEXP a, SEXP b);
 RcppExport SEXP _R_futhark_example_futhark_entry_main_cpp(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int32_t >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int32_t >::type b(bSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type a(aSEXP);
+    Rcpp::traits::input_parameter< SEXP >::type b(bSEXP);
     rcpp_result_gen = Rcpp::wrap(futhark_entry_main_cpp(a, b));
     return rcpp_result_gen;
 END_RCPP
