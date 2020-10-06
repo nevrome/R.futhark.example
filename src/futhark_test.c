@@ -1983,7 +1983,7 @@ static int futrts_main(struct futhark_context *ctx, int32_t *out_scalar_out_9,
     int err = 0;
     int32_t scalar_out_8;
     int32_t x_6 = add32(x_4, y_5);
-    int32_t res_7 = mul32(3, x_6);
+    int32_t res_7 = add32(5, x_6);
     
     scalar_out_8 = res_7;
     *out_scalar_out_9 = scalar_out_8;
