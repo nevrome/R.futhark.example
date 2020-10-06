@@ -7,8 +7,3 @@ futhark_entry_main_cpp <- function(a, b) {
     .Call('_R_futhark_example_futhark_entry_main_cpp', PACKAGE = 'R.futhark.example', a, b)
 }
 
-#' Testfunction
-rcpp_hello_world <- function() {
-    .Call('_R_futhark_example_rcpp_hello_world', PACKAGE = 'R.futhark.example')
-}
-
