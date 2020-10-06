@@ -2,7 +2,6 @@
 #include <Rinternals.h>
 
 #include "futhark_test.h"
-#include "futhark_bridge_c_cpp.h"
 
 int32_t futhark_entry_main_c(int32_t a, int32_t b) {
 
