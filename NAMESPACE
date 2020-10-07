@@ -2,6 +2,6 @@
 
 export(.onUnload)
 export(futhark_entry_main_cpp)
-export(lol)
+export(futhark_test)
 importFrom(Rcpp,evalCpp)
 useDynLib(R.futhark.example)

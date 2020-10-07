@@ -1960,8 +1960,8 @@ void futhark_context_unpause_profiling(struct futhark_context *ctx)
 {
     ctx->profiling_paused = 0;
 }
-static int futrts_main(struct futhark_context *ctx, int32_t *out_scalar_out_9,
-                       int32_t x_4, int32_t y_5);
+static int futrts_main(struct futhark_context *ctx, int32_t *out_scalar_out_11,
+                       int32_t x_5, int32_t y_6);
 int init_constants(struct futhark_context *ctx)
 {
     (void) ctx;
@@ -1977,16 +1977,17 @@ int free_constants(struct futhark_context *ctx)
     (void) ctx;
     return 0;
 }
-static int futrts_main(struct futhark_context *ctx, int32_t *out_scalar_out_9,
-                       int32_t x_4, int32_t y_5)
+static int futrts_main(struct futhark_context *ctx, int32_t *out_scalar_out_11,
+                       int32_t x_5, int32_t y_6)
 {
     int err = 0;
-    int32_t scalar_out_8;
-    int32_t x_6 = add32(x_4, y_5);
-    int32_t res_7 = add32(5, x_6);
+    int32_t scalar_out_10;
+    int32_t x_7 = mul32(2, x_5);
+    int32_t y_8 = mul32(3, y_6);
+    int32_t res_9 = add32(x_7, y_8);
     
-    scalar_out_8 = res_7;
-    *out_scalar_out_9 = scalar_out_8;
+    scalar_out_10 = res_9;
+    *out_scalar_out_11 = scalar_out_10;
     
   cleanup:
     { }
@@ -1995,18 +1996,18 @@ static int futrts_main(struct futhark_context *ctx, int32_t *out_scalar_out_9,
 int futhark_entry_main(struct futhark_context *ctx, int32_t *out0, const
                        int32_t in0, const int32_t in1)
 {
-    int32_t x_4;
-    int32_t y_5;
-    int32_t scalar_out_8;
+    int32_t x_5;
+    int32_t y_6;
+    int32_t scalar_out_10;
     
     lock_lock(&ctx->lock);
-    x_4 = in0;
-    y_5 = in1;
+    x_5 = in0;
+    y_6 = in1;
     
-    int ret = futrts_main(ctx, &scalar_out_8, x_4, y_5);
+    int ret = futrts_main(ctx, &scalar_out_10, x_5, y_6);
     
     if (ret == 0) {
-        *out0 = scalar_out_8;
+        *out0 = scalar_out_10;
     }
     lock_unlock(&ctx->lock);
     return ret;
